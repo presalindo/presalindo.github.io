@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conheça nosso Serviço de Consultoria</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50, #1a2530);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #3498db;
+            margin-top: 10px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .service-card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card i {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+        
+        .benefits {
+            background: #2c3e50;
+            color: white;
+            padding: 4rem 0;
+        }
+        
+        .benefits h2 {
+            color: white;
+        }
+        
+        .benefits h2:after {
+            background: #3498db;
+        }
+        
+        .benefit-list {
+            list-style-type: none;
+        }
+        
+        .benefit-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .benefit-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .testimonials {
+            background: white;
+            padding: 4rem 0;
+        }
+        
+        .testimonial-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            flex: 1;
+            min-width: 300px;
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .cta {
+            text-align: center;
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+        }
+        
+        .cta h2 {
+            color: white;
+        }
+        
+        .cta h2:after {
+            background: white;
+            margin: 10px auto;
+        }
+        
+        .cta .btn {
+            background: white;
+            color: #3498db;
+        }
+        
+        .cta .btn:hover {
+            background: #f8f9fa;
+        }
+        
+        footer {
+            background: #1a2530;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .services, .testimonial-cards {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Consultoria Empresarial Excellence</h1>
+            <p>Soluções especializadas para impulsionar seu negócio</p>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h2>Conheça nosso Serviço de Consultoria</h2>
+            <p>Oferecemos soluções personalizadas para ajudar sua empresa a superar desafios, maximizar oportunidades e alcançar resultados excepcionais. Nossa equipe de especialistas está pronta para transformar sua visão em realidade.</p>
+            <a href="#contact" class="btn">Solicitar Consultoria</a>
+        </div>
+    </section>
+    
+    <section class="container">
+        <h2>Nossos Serviços</h2>
+        <div class="services">
+            <div class="service-card">
+                <h3>Consultoria Estratégica</h3>
+                <p>Desenvolvemos estratégias personalizadas para posicionar sua empresa no caminho do crescimento sustentável e da lucratividade.</p>
+            </div>
+            <div class="service-card">
+                <h3>Consultoria Financeira</h3>
+                <p>Otimizamos a gestão financeira da sua empresa, identificando oportunidades de redução de custos e maximização de receitas.</p>
+            </div>
+            <div class="service-card">
+                <h3>Consultoria de Marketing</h3>
+                <p>Criamos estratégias de marketing eficazes para aumentar a visibilidade da sua marca e atrair mais clientes.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="benefits">
+        <div class="container">
+            <h2>Vantagens da Nossa Consultoria</h2>
+            <ul class="benefit-list">
+                <li>Equipe especializada com anos de experiência no mercado</li>
+                <li>Abordagem personalizada para cada cliente</li>
+                <li>Metodologias comprovadas e resultados mensuráveis</li>
+                <li>Suporte contínuo durante e após a implementação</li>
+                <li>Foco no retorno sobre o investimento (ROI)</li>
+                <li>Visão externa objetiva para identificar oportunidades</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"A consultoria transformou completamente nossa estratégia de negócios. Em apenas 6 meses, aumentamos nossa receita em 40%."</p>
+                    <p class="testimonial-author">Carlos Silva, CEO da Empresa TechSolutions</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Os insights proporcionados pela equipe de consultoria foram fundamentais para repensarmos nossos processos e melhorarmos a eficiência."</p>
+                    <p class="testimonial-author">Mariana Oliveira, Diretora da InovaCorp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Pronto para transformar seu negócio?</h2>
+            <p>Entre em contato conosco para uma consultoria inicial gratuita</p>
+            <a href="#" class="btn">Solicitar Consultoria</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>Consultoria em Tecnologia &copy; 2023 - Todos os direitos reservados</p>
+            <p>Tel: (51) 997172251 | Email: robson.presalindo@gmail.com</p>
+        </div>
+    </footer>
+</body>
+</html>
