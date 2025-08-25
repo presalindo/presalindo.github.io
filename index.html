@@ -4,140 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultoria em Soluções Tecnológicas | Robson de Oliveira</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #2980b9;
+            --light-color: #f8f9fa;
+            --dark-color: #1a2530;
         }
         
         body {
-            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #333;
             line-height: 1.6;
         }
         
-        header {
-            background: linear-gradient(135deg, #2c3e50, #1a2530);
+        .navbar {
+            background-color: var(--dark-color) !important;
+        }
+        
+        .bg-primary {
+            background-color: var(--primary-color) !important;
+        }
+        
+        .bg-dark {
+            background-color: var(--dark-color) !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        
+        .btn-outline-light:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--secondary-color), var(--dark-color));
             color: white;
-            padding: 2rem 0;
-            text-align: center;
+            padding: 7rem 0;
         }
         
-        .container {
-            width: 85%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 0;
-        }
-        
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-        }
-        
-        h2 {
-            font-size: 2rem;
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
+        .section-title {
             position: relative;
+            margin-bottom: 2rem;
         }
         
-        h2:after {
+        .section-title::after {
             content: '';
             display: block;
             width: 60px;
             height: 4px;
-            background: #3498db;
-            margin-top: 10px;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-            color: #2c3e50;
-            margin: 1.5rem 0 1rem;
-        }
-        
-        p {
-            margin-bottom: 1.2rem;
-            font-size: 1.1rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: #3498db;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background: #2980b9;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .hero {
-            text-align: center;
-            padding: 4rem 0;
-            background: white;
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-        }
-        
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin: 3rem 0;
+            background: var(--primary-color);
+            margin-top: 15px;
         }
         
         .service-card {
-            flex: 1;
-            min-width: 250px;
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
+            height: 100%;
         }
         
         .service-card:hover {
             transform: translateY(-10px);
         }
         
-        .service-card i {
+        .service-icon {
             font-size: 2.5rem;
-            color: #3498db;
+            color: var(--primary-color);
             margin-bottom: 1rem;
         }
         
-        .benefits {
-            background: #2c3e50;
-            color: white;
-            padding: 4rem 0;
-        }
-        
-        .benefits h2 {
+        .benefits-section {
+            background-color: var(--secondary-color);
             color: white;
         }
         
-        .benefits h2:after {
-            background: #3498db;
+        .benefits-section .section-title::after {
+            background: var(--primary-color);
         }
         
         .benefit-list {
             list-style-type: none;
+            padding-left: 0;
         }
         
         .benefit-list li {
@@ -146,233 +104,221 @@
             position: relative;
         }
         
-        .benefit-list li:before {
+        .benefit-list li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: #3498db;
+            color: var(--primary-color);
             font-weight: bold;
         }
         
-        .testimonials {
-            background: white;
-            padding: 4rem 0;
-        }
-        
-        .testimonial-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-        
         .testimonial-card {
-            flex: 1;
-            min-width: 300px;
-            background: #f8f9fa;
-            padding: 2rem;
+            background-color: var(--light-color);
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-        }
-        
-        .testimonial-author {
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        
-        .ceo-section {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 3rem;
-            margin: 4rem 0;
-        }
-        
         .ceo-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
+            max-width: 350px;
+            margin: 0 auto;
         }
         
         .ceo-image img {
-            width: 100%;
-            max-width: 350px;
             border-radius: 50%;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
-        .ceo-content {
-            flex: 2;
-            min-width: 300px;
-        }
-        
         .contact-info {
-            background: #f8f9fa;
-            padding: 1.5rem;
+            background-color: var(--light-color);
             border-radius: 10px;
-            margin-top: 1.5rem;
-        }
-        
-        .contact-info p {
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
+            padding: 1.5rem;
         }
         
         .contact-info i {
-            margin-right: 10px;
-            color: #3498db;
+            color: var(--primary-color);
+            width: 25px;
         }
         
-        .cta {
-            text-align: center;
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
             padding: 5rem 0;
-            background: linear-gradient(135deg, #3498db, #2c3e50);
-            color: white;
         }
         
-        .cta h2 {
-            color: white;
-        }
-        
-        .cta h2:after {
+        .cta-section .section-title::after {
             background: white;
             margin: 10px auto;
-        }
-        
-        .cta .btn {
-            background: white;
-            color: #3498db;
-        }
-        
-        .cta .btn:hover {
-            background: #f8f9fa;
-        }
-        
-        footer {
-            background: #1a2530;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        @media (max-width: 768px) {
-            .services, .testimonial-cards, .ceo-section {
-                flex-direction: column;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
         }
     </style>
 </head>
 <body>
-    <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <h1>Consultoria em Soluções Tecnológicas</h1>
-            <p>Transformando desafios em oportunidades através da tecnologia</p>
+            <a class="navbar-brand" href="#">Consultoria Tech</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#benefits">Vantagens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ceo">CEO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Depoimentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-4">Consultoria em Soluções Tecnológicas</h1>
+            <p class="lead mb-4">Transformando desafios em oportunidades através da tecnologia</p>
+            <a href="#contact" class="btn btn-primary btn-lg px-5">Solicitar Consultoria</a>
         </div>
     </header>
-    
-    <section class="hero">
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
         <div class="container">
-            <h2>Conheça nosso Serviço de Consultoria</h2>
-            <p>Oferecemos soluções personalizadas em tecnologia para ajudar sua empresa a superar desafios, maximizar oportunidades e alcançar resultados excepcionais. Nossa expertise está pronta para transformar sua visão em realidade.</p>
-            <a href="#contact" class="btn">Solicitar Consultoria</a>
-        </div>
-    </section>
-    
-    <section class="container">
-        <h2>Nossos Serviços em Tecnologia</h2>
-        <div class="services">
-            <div class="service-card">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Desenvolvimento de Software</h3>
-                <p>Soluções personalizadas de software para otimizar processos e aumentar a produtividade da sua empresa.</p>
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block">Nossos Serviços em Tecnologia</h2>
             </div>
-            <div class="service-card">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <h3>Transformação Digital</h3>
-                <p>Consultoria especializada para guiar sua empresa na jornada de transformação digital e adoção de novas tecnologias.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Segurança da Informação</h3>
-                <p>Proteção de dados e sistemas com as melhores práticas e tecnologias de segurança cibernética.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="benefits">
-        <div class="container">
-            <h2>Vantagens da Nossa Consultoria</h2>
-            <ul class="benefit-list">
-                <li>Consultoria especializada com foco em resultados tangíveis</li>
-                <li>Abordagem personalizada para cada cliente</li>
-                <li>Metodologias comprovadas e soluções inovadoras</li>
-                <li>Suporte contínuo durante e após a implementação</li>
-                <li>Foco no retorno sobre o investimento (ROI)</li>
-                <li>Visão estratégica para identificar oportunidades tecnológicas</li>
-            </ul>
-        </div>
-    </section>
-    
-    <section class="container ceo-section">
-        <div class="ceo-image">
-            <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22350%22%20height%3D%22350%22%20viewBox%3D%220%200%20350%20350%22%3E%3Crect%20fill%3D%22%23f0f0f0%22%20width%3D%22350%22%20height%3D%22350%22%2F%3E%3Ctext%20fill%3D%22%23aaaaaa%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2220%22%20x%3D%22150%22%20y%3D%22180%22%20text-anchor%3D%22middle%22%3ERobson%20de%20Oliveira%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Robson de Oliveira - CEO">
-        </div>
-        <div class="ceo-content">
-            <h2>Robson de Oliveira - CEO</h2>
-            <p>Com vasta experiência no setor de tecnologia, Robson de Oliveira lidera nossa consultoria com visão estratégica e conhecimento técnico profundo. Sua expertise abrange desde desenvolvimento de software até implementação de soluções empresariais complexas.</p>
-            <p>Robson acredita que a tecnologia deve ser um facilitador para os negócios, e não uma barreira. Por isso, dedica-se a criar soluções que sejam tanto tecnologicamente robustas quanto intuitivas e alinhadas com os objetivos de negócio de cada cliente.</p>
-            
-            <div class="contact-info">
-                <h3>Contato Direto</h3>
-                <p><i class="fas fa-phone"></i> (51) 99717-2251</p>
-                <p><i class="fas fa-envelope"></i> robson.presalindo@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Atendimento remoto e presencial em todo o Brasil</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="testimonials">
-        <div class="container">
-            <h2>O que nossos clientes dizem</h2>
-            <div class="testimonial-cards">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"A consultoria do Robson transformou completamente nossa infraestrutura de TI. Em apenas 6 meses, aumentamos nossa eficiência operacional em 40%."</p>
-                    <p class="testimonial-author">Carlos Silva, CEO da TechSolutions</p>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card service-card h-100 shadow">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-laptop-code service-icon"></i>
+                            <h3 class="card-title">Desenvolvimento de Software</h3>
+                            <p class="card-text">Soluções personalizadas de software para otimizar processos e aumentar a produtividade da sua empresa.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Os insights proporcionados pela equipe de consultoria foram fundamentais para repensarmos nossos processos e adotarmos as tecnologias certas."</p>
-                    <p class="testimonial-author">Mariana Oliveira, Diretora da InovaCorp</p>
+                <div class="col-md-4">
+                    <div class="card service-card h-100 shadow">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-cloud-upload-alt service-icon"></i>
+                            <h3 class="card-title">Transformação Digital</h3>
+                            <p class="card-text">Consultoria especializada para guiar sua empresa na jornada de transformação digital e adoção de novas tecnologias.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card h-100 shadow">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-shield-alt service-icon"></i>
+                            <h3 class="card-title">Segurança da Informação</h3>
+                            <p class="card-text">Proteção de dados e sistemas com as melhores práticas e tecnologias de segurança cibernética.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <section class="cta" id="contact">
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits-section py-5">
         <div class="container">
-            <h2>Pronto para transformar seu negócio com tecnologia?</h2>
-            <p>Entre em contato conosco para uma consultoria inicial gratuita</p>
-            <a href="https://wa.me/5551997172251?text=Olá! Gostaria de saber mais sobre os serviços de consultoria." class="btn" target="_blank">Fale pelo WhatsApp</a>
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block text-white">Vantagens da Nossa Consultoria</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <ul class="benefit-list">
+                        <li>Consultoria especializada com foco em resultados tangíveis</li>
+                        <li>Abordagem personalizada para cada cliente</li>
+                        <li>Metodologias comprovadas e soluções inovadoras</li>
+                        <li>Suporte contínuo durante e após a implementação</li>
+                        <li>Foco no retorno sobre o investimento (ROI)</li>
+                        <li>Visão estratégica para identificar oportunidades tecnológicas</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
-    
-    <footer>
+
+    <!-- CEO Section -->
+    <section id="ceo" class="py-5">
         <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <div class="ceo-image">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22350%22%20height%3D%22350%22%20viewBox%3D%220%200%20350%20350%22%3E%3Crect%20fill%3D%22%23f0f0f0%22%20width%3D%22350%22%20height%3D%22350%22%2F%3E%3Ctext%20fill%3D%22%23aaaaaa%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2220%22%20x%3D%22150%22%20y%3D%22180%22%20text-anchor%3D%22middle%22%3ERobson%20de%20Oliveira%3C%2Ftext%3E%3C%2Fsvg%3E" 
+                             alt="Robson de Oliveira - CEO" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h2 class="section-title">Robson de Oliveira - CEO</h2>
+                    <p>Com vasta experiência no setor de tecnologia, Robson de Oliveira lidera nossa consultoria com visão estratégica e conhecimento técnico profundo. Sua expertise abrange desde desenvolvimento de software até implementação de soluções empresariais complexas.</p>
+                    <p>Robson acredita que a tecnologia deve ser um facilitador para os negócios, e não uma barreira. Por isso, dedica-se a criar soluções que sejam tanto tecnologicamente robustas quanto intuitivas e alinhadas com os objetivos de negócio de cada cliente.</p>
+                    
+                    <div class="contact-info mt-4">
+                        <h3>Contato Direto</h3>
+                        <p><i class="fas fa-phone"></i> (51) 99717-2251</p>
+                        <p><i class="fas fa-envelope"></i> robson.presalindo@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Atendimento remoto e presencial em todo o Brasil</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block">O que nossos clientes dizem</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="testimonial-card p-4 h-100">
+                        <p class="fst-italic mb-4">"A consultoria do Robson transformou completamente nossa infraestrutura de TI. Em apenas 6 meses, aumentamos nossa eficiência operacional em 40%."</p>
+                        <p class="fw-bold text-primary">Carlos Silva, CEO da TechSolutions</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial-card p-4 h-100">
+                        <p class="fst-italic mb-4">"Os insights proporcionados pela equipe de consultoria foram fundamentais para repensarmos nossos processos e adotarmos as tecnologias certas."</p>
+                        <p class="fw-bold text-primary">Mariana Oliveira, Diretora da InovaCorp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section text-center">
+        <div class="container">
+            <h2 class="section-title d-inline-block">Pronto para transformar seu negócio com tecnologia?</h2>
+            <p class="lead mb-4">Entre em contato conosco para uma consultoria inicial gratuita</p>
+            <a href="https://wa.me/5551997172251?text=Olá! Gostaria de saber mais sobre os serviços de consultoria." 
+               class="btn btn-outline-light btn-lg px-5" target="_blank">
+               <i class="fab fa-whatsapp me-2"></i>Fale pelo WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
             <p>Consultoria em Soluções Tecnológicas &copy; 2023 - Todos os direitos reservados</p>
             <p>CEO: Robson de Oliveira | Tel: (51) 99717-2251 | Email: robson.presalindo@gmail.com</p>
         </div>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
